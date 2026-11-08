@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#160b1c">
+<title>Happy Diwali, Gopika ✨</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&family=Great+Vibes&display=swap');
+
+:root {
+    --gold: #ffd780;
+    --gold-light: #fff0bf;
+    --orange: #ff9b43;
+    --cream: #fff3df;
+    --muted: #d8c5bd;
+    --glass: rgba(255,255,255,.075);
+    --border: rgba(255,220,165,.22);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
+    background:
+        radial-gradient(ellipse at 50% 5%, #55213b 0%, transparent 48%),
+        radial-gradient(ellipse at 5% 70%, #351329 0%, transparent 42%),
+        radial-gradient(ellipse at 95% 90%, #42200f 0%, transparent 45%),
+        #120a19;
+    color: var(--cream);
+    font-family: 'DM Sans', sans-serif;
+}
+
+button {
+    font: inherit;
+}
+
+button:focus-visible {
+    outline: 3px solid var(--gold-light);
+    outline-offset: 5px;
+}
+
+::selection {
+    background: #d99b51;
+    color: #170b17;
+}
+
+/* Festive background */
+
+.background-glow {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.glow {
+    position: absolute;
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    filter: blur(100px);
+    opacity: .15;
+    background: #ff8b37;
+    animation: glow 8s ease-in-out infinite alternate;
+}
+
+.glow.one { top: 10%; left: -100px; }
+.glow.two { right: -100px; bottom: 10%; background: #d85b36; animation-delay: -4s; }
+
+@keyframes glow {
+    from { transform: scale(.85); opacity: .10; }
+    to { transform: scale(1.25); opacity: .24; }
+}
+
+/* Lights */
+
+.lights {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 55px;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    z-index: 3;
+    pointer-events: none;
+}
+
+.light {
+    width: 9px;
+    height: 13px;
+    border-radius: 50%;
+    background: #ffcc65;
+    box-shadow: 0 0 12px 4px rgba(255,183,70,.55);
+    animation: twinkle 2s infinite alternate;
+}
+
+.light:nth-child(2n) { animation-delay: .6s; }
+.light:nth-child(3n) { animation-delay: 1s; }
+
+@keyframes twinkle {
+    from { opacity: .4; box-shadow: 0 0 5px 2px #e99a3a; }
+    to { opacity: 1; box-shadow: 0 0 18px 6px #ffb94d; }
+}
+
+/* Sparkles */
+
+.sparkle {
+    position: fixed;
+    z-index: 0;
+    pointer-events: none;
+    color: var(--gold);
+    opacity: .5;
+    animation: sparkle 4s ease-in-out infinite;
+}
+
+@keyframes sparkle {
+    0%, 100% { opacity: .15; transform: scale(.7) rotate(0deg); }
+    50% { opacity: .8; transform: scale(1.2) rotate(45deg); }
+}
+
+/* Main layout */
+
+main {
+    position: relative;
+    z-index: 1;
+}
+
+.hero {
+    min-height: 100vh;
+    padding: 100px 20px 65px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.eyebrow {
+    color: var(--gold);
+    font-size: 11px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+}
+
+h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(48px, 9vw, 94px);
+    font-weight: 500;
+    line-height: 1.05;
+    color: var(--gold-light);
+    text-shadow: 0 0 35px rgba(255,183,85,.22);
+}
+
+h1 span {
+    display: block;
+    font-family: 'Great Vibes', cursive;
+    font-size: clamp(65px, 12vw, 120px);
+    color: #ffc66e;
+    font-weight: 400;
+    margin-top: 5px;
+}
+
+.hero-subtitle {
+    max-width: 550px;
+    margin: 22px auto 0;
+    font-size: 15px;
+    line-height: 1.9;
+    color: var(--muted);
+}
+
+/* Decorative diya */
+
+.diya-stage {
+    width: 180px;
+    height: 185px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 35px auto 15px;
+}
+
+.diya-glow {
+    position: absolute;
+    width: 145px;
+    height: 145px;
+    border-radius: 50%;
+    background: rgba(255,166,56,.13);
+    filter: blur(35px);
+    transition: .8s;
+}
+
+.diya {
+    position: relative;
+    z-index: 2;
+    width: 105px;
+    height: 49px;
+    background: linear-gradient(180deg, #ffca70, #b94d18);
+    border-radius: 10px 10px 55px 55px;
+    box-shadow: 0 12px 25px rgba(0,0,0,.35), inset 0 5px 8px rgba(255,255,255,.25);
+}
+
+.diya::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: 0;
+    width: 100%;
+    height: 13px;
+    border-radius: 50%;
+    background: linear-gradient(90deg, #e68b3d, #ffe2a0, #c85a20);
+}
+
+.flame {
+    position: absolute;
+    bottom: 43px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 28px;
+    height: 51px;
+    border-radius: 60% 40% 60% 40%;
+    background: linear-gradient(to top, #ff721e 5%, #ffb33f 55%, #fff3b0 100%);
+    box-shadow: 0 0 20px 8px rgba(255,158,50,.5);
+    opacity: 0;
+    transform-origin: bottom center;
+    transition: opacity .5s;
+}
+
+.flame::after {
+    content: '';
+    position: absolute;
+    top: 9px;
+    left: 9px;
+    width: 10px;
+    height: 23px;
+    background: #fff9d6;
+    border-radius: 50%;
+    filter: blur(2px);
+}
+
+.diya-stage.lit .flame {
+    opacity: 1;
+    animation: flicker 1.2s ease-in-out infinite alternate;
+}
+
+.diya-stage.lit .diya-glow {
+    transform: scale(1.6);
+    background: rgba(255,177,65,.3);
+}
+
+@keyframes flicker {
+    from { transform: translateX(-50%) rotate(-5deg) scaleY(.94); }
+    to { transform: translateX(-50%) rotate(5deg) scaleY(1.08); }
+}
+
+/* Main button */
+
+.light-button {
+    border: 1px solid rgba(255,218,157,.7);
+    background: linear-gradient(120deg, #ffe0a0, #e9a34d);
+    color: #321522;
+    padding: 15px 31px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: .5px;
+    cursor: pointer;
+    box-shadow: 0 5px 30px rgba(255,167,72,.16);
+    transition: transform .3s, box-shadow .3s;
+}
+
+.light-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 35px rgba(255,167,72,.4);
+}
+
+.button-icon {
+    margin-right: 9px;
+}
+
+.hint {
+    margin-top: 14px;
+    color: #bba8a6;
+    font-size: 11px;
+    letter-spacing: 1px;
+}
+
+/* Greeting card */
+
+.greeting-section {
+    max-width: 850px;
+    padding: 50px 22px 100px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.glass-card {
+    background: linear-gradient(135deg, rgba(255,255,255,.09), rgba(255,255,255,.025));
+    border: 1px solid var(--border);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border-radius: 25px;
+    padding: clamp(28px, 6vw, 60px);
+    box-shadow: 0 25px 80px rgba(0,0,0,.22);
+    opacity: 0;
+    transform: translateY(25px);
+    transition: opacity .9s, transform .9s, border-color .5s;
+}
+
+.glass-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.card-top {
+    color: var(--gold);
+    font-size: 11px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 22px;
+}
+
+.card-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(34px, 6vw, 54px);
+    font-weight: 500;
+    color: var(--gold-light);
+    margin-bottom: 26px;
+}
+
+.message {
+    max-width: 650px;
+    margin: 0 auto;
+    color: #e8d8d0;
+    font-size: 15px;
+    line-height: 2.1;
+}
+
+.message p {
+    margin-bottom: 19px;
+}
+
+.message strong {
+    color: #ffd58e;
+    font-weight: 600;
+}
+
+.signature {
+    margin-top: 35px;
+    font-family: 'Great Vibes', cursive;
+    color: var(--gold);
+    font-size: 38px;
+}
+
+.signature-caption {
+    font-size: 11px;
+    color: #bca8a5;
+    margin-top: 5px;
+    letter-spacing: 2px;
+}
+
+/* Decorative divider */
+
+.divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin: 45px auto;
+    color: var(--gold);
+}
+
+.divider::before,
+.divider::after {
+    content: '';
+    height: 1px;
+    width: 65px;
+    background: linear-gradient(90deg, transparent, #c89553);
+}
+
+.divider::after {
+    transform: rotate(180deg);
+}
+
+/* Wishes */
+
+.wishes-section {
+    max-width: 950px;
+    margin: 0 auto;
+    padding: 10px 22px 100px;
+    text-align: center;
+}
+
+.section-heading {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(34px, 6vw, 49px);
+    color: var(--gold-light);
+    font-weight: 500;
+}
+
+.section-description {
+    margin: 12px 0 35px;
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.wish-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 17px;
+}
+
+.wish-card {
+    padding: 28px 17px;
+    border-radius: 18px;
+    background: var(--glass);
+    border: 1px solid rgba(255,220,165,.14);
+    transition: transform .3s, background .3s;
+}
+
+.wish-card:hover {
+    transform: translateY(-6px);
+    background: rgba(255,255,255,.11);
+}
+
+.wish-icon {
+    font-size: 30px;
+    margin-bottom: 16px;
+}
+
+.wish-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 24px;
+    color: var(--gold);
+    margin-bottom: 9px;
+}
+
+.wish-card p {
+    color: #cbb9b5;
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+/* Final section */
+
+.final-section {
+    padding: 20px 20px 90px;
+    text-align: center;
+}
+
+.final-message {
+    max-width: 630px;
+    margin: 0 auto;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(25px, 5vw, 38px);
+    line-height: 1.5;
+    color: var(--gold-light);
+}
+
+.final-name {
+    font-family: 'Great Vibes', cursive;
+    font-size: 65px;
+    color: var(--gold);
+    margin-top: 20px;
+}
+
+footer {
+    padding: 25px 15px 35px;
+    text-align: center;
+    border-top: 1px solid rgba(255,255,255,.08);
+    color: #a99598;
+    font-size: 11px;
+    letter-spacing: 1px;
+}
+
+footer span {
+    color: var(--gold);
+}
+
+/* Floating decorations */
+
+.floating-diya {
+    position: absolute;
+    font-size: 25px;
+    opacity: .55;
+    animation: float 5s ease-in-out infinite;
+    pointer-events: none;
+}
+
+.floating-diya.left { left: 7%; top: 55%; }
+.floating-diya.right { right: 7%; top: 30%; animation-delay: -2s; }
+
+@keyframes float {
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(-13px); }
+}
+
+/* Responsive */
+
+@media(max-width:650px) {
+    .hero {
+        padding-top: 95px;
+        min-height: 100svh;
+    }
+
+    .eyebrow {
+        letter-spacing: 3px;
+        font-size: 9px;
+    }
+
+    .hero-subtitle {
+        font-size: 13px;
+    }
+
+    .diya-stage {
+        margin-top: 25px;
+        margin-bottom: 15px;
+    }
+
+    .greeting-section {
+        padding-top: 25px;
+        padding-bottom: 75px;
+    }
+
+    .wish-grid {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+        margin: auto;
+        gap: 12px;
+    }
+
+    .wish-card {
+        padding: 22px;
+    }
+
+    .floating-diya {
+        font-size: 18px;
+    }
+
+    .floating-diya.left { left: 3%; }
+    .floating-diya.right { right: 3%; }
+}
+
+@media(prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        scroll-behavior: auto !important;
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="background-glow">
+    <div class="glow one"></div>
+    <div class="glow two"></div>
+</div>
+
+<div class="lights" aria-hidden="true">
+    <div class="light"></div><div class="light"></div>
+    <div class="light"></div><div class="light"></div>
+    <div class="light"></div><div class="light"></div>
+    <div class="light"></div><div class="light"></div>
+    <div class="light"></div><div class="light"></div>
+    <div class="light"></div><div class="light"></div>
+</div>
+
+<main>
+
+<section class="hero">
+
+    <div class="floating-diya left" aria-hidden="true">🪔</div>
+    <div class="floating-diya right" aria-hidden="true">✨</div>
+
+    <div class="eyebrow">A little festival surprise, just for you</div>
+
+    <h1>
+        Happy Diwali
+        <span>Gopika!</span>
+    </h1>
+
+    <p class="hero-subtitle">
+        A little sparkle, a little happiness, and a special wish
+        for someone who is becoming an important part of my life.
+    </p>
+
+    <div class="diya-stage" id="diyaStage">
+        <div class="diya-glow"></div>
+        <div class="flame" id="flame"></div>
+        <div class="diya"></div>
+    </div>
+
+    <button class="light-button" id="lightButton" type="button" aria-controls="greetingCard" aria-expanded="false">
+        <span class="button-icon">✦</span>
+        Light Your Diya
+    </button>
+
+    <p class="hint" id="hint">A little surprise is waiting for you ✨</p>
+
+</section>
+
+<section class="greeting-section" id="greetingCard" aria-label="Personal Diwali greeting">
+
+    <div class="glass-card" id="mainCard">
+
+        <div class="card-top">✦ A special wish for you ✦</div>
+
+        <h2 class="card-title">Dear Gopika,</h2>
+
+        <div class="message">
+
+            <p>
+                This Diwali, I wanted to do something a little different
+                and make a small surprise just for you.
+            </p>
+
+            <p>
+                Even though we haven't met in person yet, our calls and
+                chats have given us a chance to start building a beautiful
+                connection. I'm genuinely happy that we got to know each
+                other.
+            </p>
+
+            <p>
+                You are not just my <strong>sister</strong>, but also a
+                <strong>friend</strong> who is gradually becoming very
+                important to me.
+            </p>
+
+            <p>
+                We still have so much to discover about each other.
+                I hope that, with time, our sibling bond becomes stronger,
+                our friendship grows deeper, and we create many wonderful
+                moments along the way.
+            </p>
+
+            <p>
+                May this Diwali bring you endless happiness, good health,
+                peaceful days, exciting opportunities, and countless
+                reasons to smile.
+            </p>
+
+            <p>
+                Keep smiling, keep shining, and always believe in yourself.
+                You deserve all the beautiful things life has to offer.
+            </p>
+
+        </div>
+
+        <div class="divider">✧ 🪔 ✧</div>
+
+        <div class="signature">Your brother & friend</div>
+        <div class="signature-caption">WITH WARMEST WISHES</div>
+
+    </div>
+
+</section>
+
+<section class="wishes-section">
+
+    <h2 class="section-heading">A Little Something for You</h2>
+
+    <p class="section-description">
+        Three wishes from my heart for your special day.
+    </p>
+
+    <div class="wish-grid">
+
+        <div class="wish-card">
+            <div class="wish-icon">🌸</div>
+            <h3>Happiness</h3>
+            <p>
+                May every new day bring you beautiful smiles,
+                cheerful moments, and reasons to celebrate.
+            </p>
+        </div>
+
+        <div class="wish-card">
+            <div class="wish-icon">✨</div>
+            <h3>Bright Future</h3>
+            <p>
+                May your dreams turn into achievements and
+                every step take you closer to your goals.
+            </p>
+        </div>
+
+        <div class="wish-card">
+            <div class="wish-icon">🪔</div>
+            <h3>Stronger Bond</h3>
+            <p>
+                May our sibling bond and friendship keep growing
+                stronger with every conversation and every passing day.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+<section class="final-section">
+
+    <div class="divider">✦ ✦ ✦</div>
+
+    <p class="final-message">
+        May your life shine brighter than every diya,
+        your smile sparkle brighter than every firework,
+        and your days be filled with happiness.
+    </p>
+
+    <div class="final-name">Happy Diwali, Gopika!</div>
+
+    <p style="font-size:12px;color:#c3aaa7;margin-top:12px;letter-spacing:1px;">
+        HAVE A BEAUTIFUL AND JOYFUL FESTIVAL 🪔
+    </p>
+
+</section>
+
+</main>
+
+<footer>
+    Made especially for <span>Gopika</span> ✨
+    <br><br>
+    A small surprise from your brother & friend.
+</footer>
+
+<script>
+const lightButton = document.getElementById('lightButton');
+const diyaStage = document.getElementById('diyaStage');
+const mainCard = document.getElementById('mainCard');
+const greetingCard = document.getElementById('greetingCard');
+const hint = document.getElementById('hint');
+
+let isLit = false;
+
+lightButton.addEventListener('click', () => {
+
+    if (isLit) {
+        greetingCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        return;
+    }
+
+    isLit = true;
+
+    diyaStage.classList.add('lit');
+
+    lightButton.innerHTML = '<span class="button-icon">✦</span> Your Diya Is Lit!';
+    lightButton.setAttribute('aria-expanded', 'true');
+
+    hint.textContent = 'Your special Diwali wish is ready. ✨';
+
+    mainCard.classList.add('visible');
+
+    setTimeout(() => {
+        greetingCard.scrollIntoView({
+            behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth',
+            block: 'center'
+        });
+    }, 350);
+
+    createSparkles();
+});
+
+function createSparkles() {
+
+    const symbols = ['✦', '✧', '⋆', '✨'];
+
+    for (let i = 0; i < 28; i++) {
+
+        const sparkle = document.createElement('div');
+
+        sparkle.className = 'sparkle';
+        sparkle.textContent = symbols[Math.floor(Math.random() * symbols.length)];
+
+        sparkle.style.left = Math.random() * 100 + 'vw';
+        sparkle.style.top = Math.random() * 100 + 'vh';
+        sparkle.style.fontSize = (10 + Math.random() * 17) + 'px';
+        sparkle.style.animationDelay = Math.random() * 3 + 's';
+
+        document.body.appendChild(sparkle);
+
+        setTimeout(() => sparkle.remove(), 6000);
+    }
+}
+
+// Reveal the greeting when the visitor scrolls to it.
+const observer = new IntersectionObserver((entries) => {
+
+    entries.forEach(entry => {
+
+        if (entry.isIntersecting) {
+            mainCard.classList.add('visible');
+        }
+
+    });
+
+}, { threshold: 0.15 });
+
+observer.observe(mainCard);
+
+// Decorative background stars
+for (let i = 0; i < 18; i++) {
+
+    const star = document.createElement('div');
+
+    star.className = 'sparkle';
+    star.textContent = '✧';
+
+    star.style.left = Math.random() * 100 + 'vw';
+    star.style.top = Math.random() * 100 + 'vh';
+    star.style.fontSize = (8 + Math.random() * 12) + 'px';
+    star.style.animationDelay = Math.random() * 4 + 's';
+
+    document.body.appendChild(star);
+}
+</script>
+
+</body>
+</html>
